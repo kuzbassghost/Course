@@ -1,0 +1,30 @@
+'use strict';
+
+/* menu */
+
+$('.main-list-item-link').on('click', function(){
+	$(this).toggleClass('active');
+	$(this).closest('.main-list-item').find('.main-list-block').slideToggle(300);
+	return false;
+})
+
+$('.lessons-title').on('click', function(){
+	$(this).toggleClass('active');
+	$(this).closest('.lessons-subsection').find('.lessons-list').slideToggle(300);
+})
+
+/* to-top */
+
+$('.to-top').on('click', function(){
+	$('html, body').stop().animate({
+		scrollTop: 0
+	}, 1000);
+})
+
+$(window).on('scroll', function(){
+	if($(window).scrollTop() > 400){
+		$('.to-top').fadeIn(300);
+	}else{
+		$('.to-top').fadeOut(300);
+	}
+})
